@@ -1,0 +1,38 @@
+<app-header>
+  </app-header>
+  
+  <ion-content>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+           
+            <ion-button (click)=" navigate()">
+              <ion-icon name="arrow-back"></ion-icon>
+              </ion-button>
+              <ion-title>product Details </ion-title>
+            </ion-buttons>
+          
+        </ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              
+              <ion-label>{{products.id}}
+                </ion-label>
+                <ion-label>{{products.name}}
+                  </ion-label>
+                  <ion-label>{{products.category}}
+                    </ion-label>
+                    <ion-label>{{products.company}}
+                      </ion-label>
+                      <ion-label>{{products.mrp}}
+                        </ion-label>  
+             </ion-item> 
+            </ion-list>
+          </ion-col>
+        </ion-row>
+     </ion-grid> 
+  
+  </ion-content>
+  

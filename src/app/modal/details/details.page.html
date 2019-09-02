@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar  style="--background:#4f4d7b;--color:#fff">
+        <ion-title *ngIf= "modalType == 'edit'">Edit Product Details</ion-title>
+        <ion-title *ngIf= "modalType == 'add'">Add Product Details</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-grid no-margin no-padding   *ngIf ="modalType == 'edit'">
+  <ion-row>
+    <ion-col >
+      <form [formGroup]="editForm">
+        <ion-list>
+          <ion-item>
+            <ion-input formControlName="name" placeholder="name" [(ngModel)]="modalData.name">
+             </ion-input> 
+           </ion-item> 
+           <ion-item>
+              <ion-input formControlName="category" placeholder="category" [(ngModel)]="modalData.category">
+               </ion-input> 
+             </ion-item> 
+             <ion-item> 
+                <ion-input formControlName="company" placeholder="company" [(ngModel)]="modalData.company">
+                 </ion-input> 
+               </ion-item>    
+             <ion-item>
+                <ion-input formControlName="mrp"  placeholder="mrp" [(ngModel)]="modalData.mrp">
+                 </ion-input> 
+               </ion-item> 
+               <ion-item>
+                  <ion-input formControlName="unit" placeholder="unit" [(ngModel)]="modalData.unit">
+                   </ion-input> 
+                 </ion-item> 
+               
+        </ion-list> 
+        <div text-right>
+          <ion-button  color="tertiary" (click)="update()">
+            Update
+           </ion-button> 
+           <ion-button  color="tertiary" (click)="closeModal()">
+              Cancel
+             </ion-button>
+         </div> 
+      </form>  
+     </ion-col> 
+   </ion-row> 
+ </ion-grid>
+
+ <ion-grid no-margin no-padding *ngIf ="modalType == 'add'">
+    <ion-row>
+      <ion-col >
+        <form [formGroup]="editForm">
+          <ion-list>
+            <ion-item>
+              <ion-input formControlName="name" placeholder="name" [(ngModel)]="addForm.name">
+               </ion-input> 
+             </ion-item> 
+             <ion-item>
+                <ion-input formControlName="category" placeholder="category" [(ngModel)]="addForm.category">
+                 </ion-input> 
+               </ion-item> 
+               <ion-item> 
+                  <ion-input formControlName="company" placeholder="company" [(ngModel)]="addForm.company">
+                   </ion-input> 
+                 </ion-item>    
+               <ion-item>
+                  <ion-input formControlName="mrp"  placeholder="mrp" [(ngModel)]="addForm.mrp">
+                   </ion-input> 
+                 </ion-item> 
+                 <ion-item>
+                    <ion-input formControlName="unit" placeholder="unit" [(ngModel)]="addForm.unit">
+                     </ion-input> 
+                   </ion-item> 
+                 
+          </ion-list> 
+          <div text-right>
+            <ion-button  color="tertiary" (click)="create()">
+              Create
+             </ion-button> 
+             <ion-button  color="tertiary" (click)="closeModal()">
+                Cancel
+               </ion-button>
+           </div> 
+        </form>  
+       </ion-col> 
+     </ion-row> 
+   </ion-grid>
+</ion-content>
